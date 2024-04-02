@@ -1,0 +1,15 @@
+# CREATE movies Table
+# Replace[Your_Bucket_Name] by your bucket name, 
+# e.g., gs://movie-lee/ml-latest-small/movies/
+CREATE EXTERNAL TABLE movies
+ (id INT, name STRING, genres STRING)
+ ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+ LOCATION 'gs://[Your_Bucket_Name]/ml-latest-small/movies/';
+
+# CREATE ratings Table
+# Replace[Your_Bucket_Name] by your bucket name, 
+# e.g., gs://movie-lee/ml-latest-small/ratings/
+CREATE EXTERNAL TABLE ratings
+ (userid INT, movieid INT, rating INT, time STRING)
+ ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+ LOCATION 'gs://[Your_Bucket_Name]/ml-latest-small/ratings/';

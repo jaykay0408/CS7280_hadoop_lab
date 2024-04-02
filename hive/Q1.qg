@@ -1,0 +1,6 @@
+# Total # of movie
+# Replace[Your_Bucket_Name] by your bucket name, 
+# e.g., gs://movie-lee/ml-latest-small/output/
+# INSERT OVERWRITE DIRECTORY 'gs://[Your_Bucket_Name]/ml-latest-small/output' 
+SELECT COUNT(*) count 
+FROM movies;                                             

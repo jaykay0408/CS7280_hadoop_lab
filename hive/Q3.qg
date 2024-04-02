@@ -1,0 +1,8 @@
+# Average Ratings per movie
+# Replace[Your_Bucket_Name] by your bucket name, 
+# e.g., gs://movie-lee/ml-latest-small/output/
+# INSERT OVERWRITE DIRECTORY 'gs://[Your_Bucket_Name]/ml-latest-small/output' 
+SELECT movies.name moviename, AVG(rating) average
+FROM ratings, movies
+WHERE ratings.movieid = movies.id
+GROUP BY movies.name
